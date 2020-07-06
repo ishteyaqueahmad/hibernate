@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
@@ -26,4 +27,39 @@
  
     </session-factory>
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    
+         <!-- Database Connection Setting -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/hibernatedb</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">password</property>
+        
+        <!--JDBC Connection Pool (use the built-in) -->
+        <property name="hibernate.connection.pool_size">1</property>
+        
+        <!-- SQL Dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        
+        <!-- Disable the second-level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">true</property>
+        
+        
+        <!-- Drop and re-create the Database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+        
+        <!-- Names the annotated entity class -->
+        <mapping class="org.hibernate.dto.UserDetails" />
+        
+    </session-factory>
+>>>>>>> branch 'master' of https://github.com/ishteyaqueahmad/hibernate.git
 </hibernate-configuration>
